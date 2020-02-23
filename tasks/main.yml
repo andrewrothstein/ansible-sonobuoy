@@ -1,0 +1,56 @@
+---
+- name: resolve platform specific vars
+  include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
+        - '{{ ansible_distribution }}.yml'
+        - '{{ ansible_os_family }}.yml'
+      skip: true
+      paths:
+        - '{{ role_path }}/vars'
+- name: check for install..
+  become: yes
+  stat:
+    path: '{{ sonobuoy_install_dir }}'
+  changed_when: False
+  register: sonobuoy_binary
+- when: not sonobuoy_binary.stat.exists
+  block:
+    - name: download
+      become: yes
+      become_user: root
+      get_url:
+        url: '{{ sonobuoy_url }}'
+        dest: /tmp/{{ sonobuoy_tgz }}
+        mode: 0644
+        checksum: '{{ sonobuoy_checksum }}'
+    - name: mkdir
+      become: yes
+      become_user: root
+      file:
+        path: '{{ sonobuoy_install_dir }}'
+        mode: 0755
+        state: directory
+    - name: unarchive...
+      become: yes
+      become_user: root
+      unarchive:
+        remote_src: yes
+        src: /tmp/{{ sonobuoy_tgz }}
+        dest: '{{ sonobuoy_install_dir }}'
+        creates: '{{ sonobuoy_install_dir }}/sonobuoy'
+  always:
+    - name: cleanup
+      become: yes
+      become_user: root
+      file:
+        path: /tmp/{{ sonobuoy_tgz }}
+        state: absent
+- name: link
+  become: yes
+  become_user: root
+  file:
+    src: '{{ sonobuoy_install_dir }}/sonobuoy'
+    dest: '{{ sonobuoy_parent_install_dir }}/bin/sonobuoy'
+    state: link

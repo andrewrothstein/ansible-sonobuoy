@@ -1,0 +1,7 @@
+---
+# vars file for sonobuoy
+sonobuoy_platform: '{{ sonobuoy_os }}_{{ sonobuoy_arch }}'
+sonobuoy_tgz: sonobuoy_{{ sonobuoy_ver }}_{{ sonobuoy_platform }}.tar.gz
+sonobuoy_url: '{{ sonobuoy_mirror }}/v{{ sonobuoy_ver }}/{{ sonobuoy_tgz }}'
+sonobuoy_checksum: '{{ sonobuoy_checksums[sonobuoy_ver][sonobuoy_platform] }}'
+sonobuoy_install_dir: '{{ sonobuoy_parent_install_dir }}/sonobuoy-{{ sonobuoy_ver }}'
