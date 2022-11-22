@@ -1,4 +1,6 @@
 ---
+- include_role:
+    name: andrewrothstein.unarchive-deps
 - name: resolve platform specific vars
   include_vars: '{{ item }}'
   with_first_found:
@@ -9,48 +11,48 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: check for install..
-  become: yes
+- name: checking for install at {{ suonobuoy_install_exe }}
+  become: true
   stat:
-    path: '{{ sonobuoy_install_dir }}'
-  changed_when: False
+    path: '{{ sonobuoy_install_exe }}'
+  changed_when: false
   register: sonobuoy_binary
 - when: not sonobuoy_binary.stat.exists
   block:
-    - name: download
-      become: yes
+    - name: downloading {{ sonobuoy_url }} to {{ sonobuoy_tmp_tgz }}
+      become: true
       become_user: root
       get_url:
         url: '{{ sonobuoy_url }}'
-        dest: /tmp/{{ sonobuoy_tgz }}
+        dest: '{{ sonobuoy_tmp_tgz }}'
         mode: 0644
         checksum: '{{ sonobuoy_checksum }}'
-    - name: mkdir
-      become: yes
+    - name: mkdir -p {{ sonobuoy_install_dir }}
+      become: true
       become_user: root
       file:
         path: '{{ sonobuoy_install_dir }}'
         mode: 0755
         state: directory
-    - name: unarchive...
-      become: yes
+    - name: unarchiving {{ sonobuoy_tmp_tgz }} to {{ sonobuoy_install_dir }}
+      become: true
       become_user: root
       unarchive:
-        remote_src: yes
-        src: /tmp/{{ sonobuoy_tgz }}
+        remote_src: true
+        src: '{{ sonobuoy_tmp_tgz }}'
         dest: '{{ sonobuoy_install_dir }}'
-        creates: '{{ sonobuoy_install_dir }}/sonobuoy'
+        creates: '{{ sonobuoy_install_exe }}'
   always:
-    - name: cleanup
-      become: yes
+    - name: rm -f {{ sonobuoy_tmp_tgz }}
+      become: true
       become_user: root
       file:
-        path: /tmp/{{ sonobuoy_tgz }}
+        path: '{{ sonobuoy_tmp_tgz }}'
         state: absent
-- name: link
-  become: yes
+- name: linking {{ sonobuoy_install_link }} to {{ sonobuoy_install_exe }}
+  become: true
   become_user: root
   file:
-    src: '{{ sonobuoy_install_dir }}/sonobuoy'
-    dest: '{{ sonobuoy_parent_install_dir }}/bin/sonobuoy'
+    src: '{{ sonobuoy_install_exe }}'
+    dest: '{{ sonobuoy_install_link }}'
     state: link

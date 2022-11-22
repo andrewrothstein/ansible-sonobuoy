@@ -1,7 +1,12 @@
 ---
 # vars file for sonobuoy
+sonobuoy_os: '{{ ansible_system | lower }}'
+sonobuoy_arch: '{{ sonobuoy_arch_map[ansible_architecture] }}'
 sonobuoy_platform: '{{ sonobuoy_os }}_{{ sonobuoy_arch }}'
 sonobuoy_tgz: sonobuoy_{{ sonobuoy_ver }}_{{ sonobuoy_platform }}.tar.gz
+sonobuoy_tmp_tgz: '{{ sonobuoy_tmp_dir | default("/tmp") }}/{{ sonobuoy_tgz }}'
 sonobuoy_url: '{{ sonobuoy_mirror }}/v{{ sonobuoy_ver }}/{{ sonobuoy_tgz }}'
 sonobuoy_checksum: '{{ sonobuoy_checksums[sonobuoy_ver][sonobuoy_platform] }}'
 sonobuoy_install_dir: '{{ sonobuoy_parent_install_dir }}/sonobuoy-{{ sonobuoy_ver }}'
+sonobuoy_install_exe: '{{ sonobuoy_install_dir }}/sonobuoy'
+sonobuoy_install_link: '{{ sonobuoy_parent_install_dir }}/bin/sonobuoy'
