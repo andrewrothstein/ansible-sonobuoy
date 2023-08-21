@@ -1,6 +1,6 @@
 ---
 # defaults file for sonobuoy
-sonobuoy_ver: 0.56.12
+sonobuoy_ver: 0.56.16
 sonobuoy_arch_map:
   386: 386
   aarch64: arm64
@@ -45,3 +45,83 @@ sonobuoy_checksums:
     windows_386: sha256:260b422a43cf596e470fb46fd19f1d53ebeb7fbb6ebc3ef74574272266cb177b
     # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.12/sonobuoy_0.56.12_windows_amd64.tar.gz
     windows_amd64: sha256:8755b3358fb44b30128a7238b6c138cc8de738e359d050e0e91e8e02d2eb74ff
+  # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.13/sonobuoy_0.56.13_checksums.txt
+  '0.56.13':
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.13/sonobuoy_0.56.13_darwin_amd64.tar.gz
+    darwin_amd64: sha256:3ec2f95a1d765d099d7befafceafbc074a5c9d3cf37286af8cda2137b52deb9a
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.13/sonobuoy_0.56.13_darwin_arm64.tar.gz
+    darwin_arm64: sha256:28607375b682bed005408404858080732bb60374b10293471d980d3793a1e456
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.13/sonobuoy_0.56.13_linux_386.tar.gz
+    linux_386: sha256:be434cd55ed17d9ee2243eb79a782576f2920d67a8fc9b2eead472e142826b3f
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.13/sonobuoy_0.56.13_linux_amd64.tar.gz
+    linux_amd64: sha256:9ab0100ba7315939b87e0d4fa6c4645957a8c1cd5ca5d1da20b18171ab9677c4
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.13/sonobuoy_0.56.13_linux_arm64.tar.gz
+    linux_arm64: sha256:e62f7a0495e8f35591c245b292350c751d889c0a0ac3536d2d544d126f53983a
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.13/sonobuoy_0.56.13_linux_ppc64le.tar.gz
+    linux_ppc64le: sha256:d785d9cf0198c5415f129206929313b9ae131b5546602d1cc3690b6d9e56b6ab
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.13/sonobuoy_0.56.13_linux_s390x.tar.gz
+    linux_s390x: sha256:b2c18f50778e658c74a4b45365ab20d6cb74a41606269a5bf11c6bcd2699700c
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.13/sonobuoy_0.56.13_windows_386.tar.gz
+    windows_386: sha256:b63614f29bcf372833ff33dcd2f4e3fa4381b3d60ae264ed9e1dbdd43ab1096e
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.13/sonobuoy_0.56.13_windows_amd64.tar.gz
+    windows_amd64: sha256:f71cab5edf1e88ee4dfa1cc285512e778d7420dffaa0929df6bc5a547d7c2d68
+  # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.14/sonobuoy_0.56.14_checksums.txt
+  '0.56.14':
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.14/sonobuoy_0.56.14_darwin_amd64.tar.gz
+    darwin_amd64: sha256:4bd609a9135bdb55d7a3407eff4824d2df7c00a03783a413a1cb93b96c4c052a
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.14/sonobuoy_0.56.14_darwin_arm64.tar.gz
+    darwin_arm64: sha256:903cf10cf0a51f7644c816a337aa5f2ef80607ad7242369d05500953727b4432
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.14/sonobuoy_0.56.14_linux_386.tar.gz
+    linux_386: sha256:4940cf8072108033857ffad8b8e680fa91eb2aa25f8612e26f672ed0226ff296
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.14/sonobuoy_0.56.14_linux_amd64.tar.gz
+    linux_amd64: sha256:c91ea8dfca07399900be0d680d1796464d22f5176b1cae7e998c5defe4f6472d
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.14/sonobuoy_0.56.14_linux_arm64.tar.gz
+    linux_arm64: sha256:b7040f2c31adc7c5e42797a43efb689135d030c8b258460200e1ce0846b46796
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.14/sonobuoy_0.56.14_linux_ppc64le.tar.gz
+    linux_ppc64le: sha256:22d288e4b578cedc959ea38f72af8d5918a0366ed5cade938571669fcd49ce1e
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.14/sonobuoy_0.56.14_linux_s390x.tar.gz
+    linux_s390x: sha256:f4e12ebf38ef84972b94358c7b1c9bf94fc3bde1508e86fd7c396480a8d121a4
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.14/sonobuoy_0.56.14_windows_386.tar.gz
+    windows_386: sha256:9222d4dd350f190acbdedf583df8b7af1d2aaadb9d109c5a950c4b231bbbf590
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.14/sonobuoy_0.56.14_windows_amd64.tar.gz
+    windows_amd64: sha256:0b5f5863651a25a2c32674a337e0dd5c4523d5636145d26cf7fff86cf1f4223f
+  # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.15/sonobuoy_0.56.15_checksums.txt
+  '0.56.15':
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.15/sonobuoy_0.56.15_darwin_amd64.tar.gz
+    darwin_amd64: sha256:f357760b2c5e0eea2ca25cc54152af9f2880fd1da284d2addd6f80406993eea3
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.15/sonobuoy_0.56.15_darwin_arm64.tar.gz
+    darwin_arm64: sha256:0b385ddea5eb766618f2d641927428244af13c27fa3e58da29a5dffd8660368c
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.15/sonobuoy_0.56.15_linux_386.tar.gz
+    linux_386: sha256:d510fdb7f5fa236ae1ef0cb6a4db7456ff68d816b604534bc12293e8afee78f0
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.15/sonobuoy_0.56.15_linux_amd64.tar.gz
+    linux_amd64: sha256:ec855c3cf225f575866c09bb91aa1673aca8f188870011952905ef9bcd53f8a1
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.15/sonobuoy_0.56.15_linux_arm64.tar.gz
+    linux_arm64: sha256:68a2b7a527b2295c7911f726de7d3e15f9ad06bc8cf4fa4acd3e9c185d1b2bf8
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.15/sonobuoy_0.56.15_linux_ppc64le.tar.gz
+    linux_ppc64le: sha256:f0bfeec41f2300afb21d5b7587964210b5590c478c463064126feb78f116a9d4
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.15/sonobuoy_0.56.15_linux_s390x.tar.gz
+    linux_s390x: sha256:9b60e411ffe4fcd9a2f748e2e6a7ef68763c5ac2de9cc366df3de60e6cb0e5ad
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.15/sonobuoy_0.56.15_windows_386.tar.gz
+    windows_386: sha256:2a17da87771de817454980d56a882dd1d0badc13eb568cb411d89852d2c3a949
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.15/sonobuoy_0.56.15_windows_amd64.tar.gz
+    windows_amd64: sha256:911a402f71d8daa89eb22f2450639373bd77340625599c9480594feffc3e2a79
+  # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.16/sonobuoy_0.56.16_checksums.txt
+  '0.56.16':
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.16/sonobuoy_0.56.16_darwin_amd64.tar.gz
+    darwin_amd64: sha256:e0a2534286138ed6bccde8b7b4872cb5c8926a56fb146f4efe2eac8644f6f688
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.16/sonobuoy_0.56.16_darwin_arm64.tar.gz
+    darwin_arm64: sha256:433321848c0c81e5361e85744f71a342a7790ee4df14386532809f804161b3ee
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.16/sonobuoy_0.56.16_linux_386.tar.gz
+    linux_386: sha256:751df60876f0a33620157a63ad54e7a7961289a2108a15e10eaaf6e3e1a167f8
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.16/sonobuoy_0.56.16_linux_amd64.tar.gz
+    linux_amd64: sha256:37c3eb18a7395e1d7930262074d367865dfb62d63664e2d4f48812694bb309b8
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.16/sonobuoy_0.56.16_linux_arm64.tar.gz
+    linux_arm64: sha256:4dffcf4f359951a502854a37b2fce6cd462fe246e5b9877b56a71a99c8f4dee6
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.16/sonobuoy_0.56.16_linux_ppc64le.tar.gz
+    linux_ppc64le: sha256:a7e15f3d8edab8806b778b2894be00e6be069c22145f2786a8f82b571e55d6dc
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.16/sonobuoy_0.56.16_linux_s390x.tar.gz
+    linux_s390x: sha256:88f44e21ba068213766aea04222e8198cbd58def427c689fd1b8e57160e3c766
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.16/sonobuoy_0.56.16_windows_386.tar.gz
+    windows_386: sha256:aa94fb3fb25fc01d03cf352ef74cf2e7a4c245dc5469afe7452d7b72dd6aaeb4
+    # https://github.com/vmware-tanzu/sonobuoy/releases/download/v0.56.16/sonobuoy_0.56.16_windows_amd64.tar.gz
+    windows_amd64: sha256:ccefe9be8f34b49785a5086004ca551585164f7e8dfc17e5bdd88717c0383fc0
