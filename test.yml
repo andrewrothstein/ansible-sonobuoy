@@ -1,4 +1,13 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.sonobuoy
+  hosts: all
   roles:
     - role: '{{ playbook_dir }}'
+  tasks:
+    - name: Executing 'sonobuoy version --short'
+      ansible.builtin.command: sonobuoy version --short
+      changed_when: false
+      register: sonobuoy_version_output
+    - name: Output from 'sonobuoy version --short'
+      ansible.builtin.debug:
+        msg: '{{ sonobuoy_version_output.stdout }}'
